@@ -29,5 +29,4 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: planning-poker-importer*
-        path: .
+        path: planning-poker-importer*
