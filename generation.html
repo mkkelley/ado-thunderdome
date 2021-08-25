@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+<form method="get" action="/battle">
+    <div class="form-group">
+        <label for="queryId">ADO Query Id</label>
+        <input class="form-control" name="queryId" id="queryId"/>
+        <label for="thunderdomeApiKey">Thunderdome API Key</label>
+        <input class="form-control" name="thunderdomeApiKey" id="thunderdomeApiKey"/>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+</form>
+
+<div>
+    Instructions
+</div>
+<div>
+    <ol>
+        <li>
+            Go to ADO and make a query that gets the work items you want to generate a planning poker game for.
+            Copy the query's GUID out of the URL in ADO.
+        </li>
+        <li>
+            Go to Thunderdome, make an account if you don't have one, and generate an api key by clicking on your
+            username and then the API key button.
+        </li>
+        <li>
+            Paste those two things into the above text boxes
+        </li>
+        <li>
+            Bookmark the page that you get when you submit the form to quickly generate another planning poker game
+            for the same query
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    Using query id {{ .QueryId }}
+</div>
+<form method="post">
+    <input type="hidden" value="{{ .QueryId }}" name="queryId"/>
+    <input type="hidden" value="{{ .ThunderdomeApiKey }}" name="thunderdomeApiKey"/>
+    <button class="btn btn-success" type="submit">Generate Battle for Query</button>
+</form>
+
+</body>
+</html>
