@@ -8,7 +8,10 @@ import (
 )
 
 func GenerationPage() http.HandlerFunc {
-	template, _ := template2.New("generation.html").ParseFiles("generation.html")
+	template, err := template2.New("generation.html").ParseFiles("generation.html")
+	if err != nil {
+		panic(err)
+	}
 
 	return func(writer http.ResponseWriter, request *http.Request) {
 		err := template.Execute(writer, nil)
@@ -26,7 +29,10 @@ type BattlePageModel struct {
 }
 
 func BattlePage() http.HandlerFunc {
-	template, _ := template2.New("battle.html").ParseFiles("battle.html")
+	template, err := template2.New("battle.html").ParseFiles("battle.html")
+	if err != nil {
+		panic(err)
+	}
 
 	return func(writer http.ResponseWriter, request *http.Request) {
 		model := BattlePageModel{
@@ -64,7 +70,6 @@ func BattlePageFormHandler(config *AppConfig) http.HandlerFunc {
 		html := fmt.Sprintf("<a href=\"%s\">%s</a>", newUrl, newUrl)
 
 		writer.Write([]byte(html))
-		//http.Redirect(writer, request, newUrl, 302)
 	}
 }
 
@@ -73,6 +78,9 @@ func RunHttpServer(config *AppConfig) {
 	r.Get("/generate", GenerationPage())
 	r.Get("/battle", BattlePage())
 	r.Post("/battle", BattlePageFormHandler(config))
+	r.Get("/", func(writer http.ResponseWriter, request *http.Request) {
+		http.Redirect(writer, request, "/generate", 302)
+	})
 
 	err := http.ListenAndServe(fmt.Sprintf(":%s", config.Port), r)
 	if err != nil {

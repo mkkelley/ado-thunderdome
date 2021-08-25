@@ -8,12 +8,10 @@ type AppConfig struct {
 		PersonalAccessToken string
 		Organization        string
 		Project             string
-		//QueryId string
-		BaseUrl string
+		BaseUrl             string
 	}
 	Thunderdome struct {
-		BaseUrl string
-		//ApiKey       string
+		BaseUrl      string
 		BattlePrefix string
 	}
 }

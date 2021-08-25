@@ -138,10 +138,6 @@ func main() {
 	}
 
 	RunHttpServer(config)
-
-	//resp := generateBattle(config)
-
-	//fmt.Println(getUrlForPlan(resp, config))
 }
 
 func generateBattle(config *AppConfig, apiKey string, queryId string) (planResponse, error) {
